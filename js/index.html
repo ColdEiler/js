@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" type="text/css" href="style-game.css">
+	<!-- Font Awesome CSS  -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />  
+    <!-- Calendar Style CSS -->
+	<meta charset="utf-8">
+	<script>
+		function showTime(){
+			let time = new Date();
+			const dayOfWeekName = new Date().toLocaleString(
+  				'default', {weekday: 'long'}
+			);
+		
+			let dt=document.getElementById("dt");
+			dt.innerHTML = 'date:'+time.getFullYear()+'/'+time.getMonth().toString().padStart(2,'0')+'/'+time.getDay().toString().padStart(2,'0')+' '+dayOfWeekName[0].toLocaleUpperCase()+dayOfWeekName.slice(1)+' '+'time:'+time.getHours().toString().padStart(2,'0')+':'+time.getMinutes().toString().padStart(2,'0')+':'+time.getSeconds().toString().padStart(2,'0');
+		}
+	</script>
+</head>
+<body>
+	<button class="accordion">Задание 1 Дата и время</button>
+	<div class="panel">
+		<div class="section1">
+			<p id ="dt" class="ex1">
+  				<script>
+					setInterval(showTime,1000);
+				</script>
+			</p>
+		</div>
+	</div>
+
+	<button class="accordion">Задание 2 Календарь</button>
+	<div class="panel">
+		<div class="calendar-wrapper">
+			<button id="btnPrev" type="button">Предыдущий</button>
+			<button id="btnNext" type="button">Следующий</button>
+		<div id="divCal"></div>
+		</div>
+	</div>
+
+	<button class="accordion">Задание 3 DOM</button>
+	<div class="panel" id="ex_3">
+  		<div class="text">
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quod quasi culpa laboriosam enim doloremque fugit autem!</p>
+			<div class="links">
+				<a href="">1 ссылка</a>
+				<a href="">2 ссылка</a>
+				<a href="">3 ссылка</a>
+				<a href="">4 ссылка</a>
+				<a href="">5 ссылка</a>
+			</div>	
+		</div>
+		<div class="text two">
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, accusamus ex. Sapiente provident aut possimus quia fugiat vitae doloremque ratione iure distinctio iusto, eius minus ducimus quos sunt similique dolorem minima quo, fuga soluta unde. Sequi iusto aspernatur soluta eius officia magnam rem facere, consectetur labore doloremque architecto amet cum.
+
+			</p>
+				
+			<div class="links">
+				<a href="">6 ссылка</a> 
+				<a href="">7 ссылка</a> 
+				<a href="">8 ссылка</a>
+			</div>
+		</div>	
+		<button type="submit" id="submit" onclick="alerted();">Колво ссылок</button>	
+	</div>
+	<button class="accordion">Задание 4 DOM изменение объекта</button>
+	<div class="panel">
+		<div class="myclass">
+			<img  src="download.jpg" alt="" id = "img" >
+		</div>
+		
+	</div>
+	
+	<button class="accordion">Задание 5 DOM создание объекта</button>
+	<div class="panel">
+		<div class="paragraph">
+			<div class="but_p">
+				<button class="add_p" onclick="add_p();">Добавить абзац</button>
+				<button class="remove_p" onclick="remove_p();" >Удалить  абзац</button>
+			</div>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit cumque magnam natus inventore sequi, doloremque animi nesciunt recusandae debitis unde nam obcaecati ut tempore harum quia deserunt hic repellat vel quae voluptatum. Eos cupiditate voluptate minus velit, aliquam aperiam. Hic eos temporibus porro et dicta modi maiores sint rem at!</p>
+			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae exercitationem natus expedita! Libero officia id numquam harum? Earum nemo, quasi libero repellat, quia quisquam consequuntur molestias, tempore iure necessitatibus facere commodi corrupti ipsam. Rem totam rerum quam.</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, in aut reiciendis dolores aliquam vitae fugiat. Facere dignissimos illo maxime. Non dolorem consequuntur, itaque ullam vel vitae magni quidem suscipit fuga perferendis, incidunt pariatur asperiores consequatur culpa totam est? Sed, officiis?</p>
+				
+		</div>
+	</div>
+
+	<button class="accordion">Задание 6 DOM обработка события</button>
+	<div class="panel">
+		<table>
+			<tr>
+			<th>gold</th>
+			<th>silver </th>
+			<th>bronze</th>
+			</tr>
+	
+			<tr><td><img src="Champs/ar.png" alt=""></td><td><img src="Champs/fr.png" alt=""></td><td><img src="Champs/hr.png" alt=""></td></tr>
+			<tr><td><img src="Champs/fr.png" alt=""></td><td><img src="Champs/hr.png" alt=""></td><td><img src="Champs/gb.png" alt=""></td></tr>
+			<tr><td><img src="Champs/de.png" alt=""></td><td><img src="Champs/ar.png" alt=""></td><td><img src="Champs/nl.png" alt=""></td></tr>
+			<tr><td><img src="Champs/es.png" alt=""></td><td><img src="Champs/nl.png" alt=""></td><td><img src="Champs/de.png" alt=""></td></tr>
+			<tr><td><img src="Champs/it.png" alt=""></td><td><img src="Champs/fr.png" alt=""></td><td><img src="Champs/de.png" alt=""></td></tr>
+		</table>
+	</div>
+
+	<button class="accordion">Задание 7 menu</button>
+	<div class="panel">
+		<div class="menu">
+			<span class="title" onclick="menu();"><img src="png-clipart-arrow-computer-icons-right-arrow-angle-black.png"></img> Сладости (нажми меня)!</span>
+			<ul>
+			  <li class = "list">Пирожное</li>
+			  <li class = "list">Пончик</li>
+			  <li class = "list">Мёд</li>
+			</ul>
+		  </div>
+		  
+	</div>
+	<button class="accordion">Задание 8 image</button>
+	<div class="panel tab" id="tab8">
+        <section id = "task_8" class="hidden tab-content-8">
+            <img src="nigga.jpg" id="Picture" class="Picture" />
+            <div class="under_pic" id = "under_pic">Здесь могла быть ваша реклама</div>
+        </section>
+       </div>
+
+	
+	<button class="accordion">Задание 9-10 Анкета </button>
+	<div class="panel">
+		<div class="anketa">
+			<form name="head_hunter">
+				<div class="form FIO">
+					<div class="right" id = "FIO_right">
+						<input name="id_FIO" size="35" class = "text_FIO">
+					</div>
+					<div class="left" >ФИО</div>
+				</div>
+				<div class="form password">
+					<div class="right" id="pas">
+						Введите пароль<br>
+						<input type="password" name = 'pwd'>
+						<br>Подтвердите пароль<input type="password" name = 'pwd1'>
+					</div>
+					<div class="left" >Пароль</div>
+				</div>
+				<div class="form gender">
+					<div class="right">
+						<input type="radio" name="sex" value="man" checked>Мужской
+						<input type="radio" name="sex" value="woman">Женский
+					</div>
+					<div class="left">Пол</div>
+				</div>
+				<div class="form skills">
+					<div class="right">
+						 Знание HTML и CSS<input TYPE="checkbox" NAME="ch"><br>
+                         Знание Perl<input TYPE="checkbox" NAME="ch">
+                         <br>
+                         Знание ASP<input TYPE="checkbox" NAME="ch">
+                         <br>
+                         Знание Adobe Photoshop<input TYPE="checkbox" NAME="ch">
+                         <br>
+                         Знание Java<input TYPE="checkbox" NAME="ch">
+                         <br>
+                         Знание JavaScript<input TYPE="checkbox" NAME="ch">
+                         <br>
+                         Знание Flash<input TYPE="checkbox" NAME="ch">
+                         <br>
+                         Знание Python<input TYPE="checkbox" NAME="ch">
+                         <br>
+					</div>
+					<div class="left">Ваши навыки</div>
+				</div>
+				<div class="form education">
+					<div class="right">
+						<select name="item" size="3">
+							<option value="">Высшее профессиональное</option>
+							<option value="">Среднее профессиональное</option>
+							<option value="">Начальное профессиональное</option>
+							<option value="">Основное общее</option>
+							<option value="">Начальное общее</option>
+						</select>
+					</div>
+					<div class="left">Образование</div>
+				</div>
+				<div class="form email">
+					<div class="right">
+						<input  name = "id_email" id ="id_email" size="35" class="text_FIO">
+					</div>
+					<div class="left">Email</div>
+				</div>
+				<div class="form phone">
+					<div class="right"><input class="text_FIO" name="id_phone" id ="id_phone"></div>
+					<div class="left">Телефон</div>
+				</div>
+				<div class="form about">
+					<div class="right">
+						<textarea  id="id_about"  class="About_text"></textarea>
+					</div>
+					<div class="left">О себе</div>
+				</div>
+				<div class= "buttons">
+					<input type="button" value="готово" onclick="valid();">
+					<input type="reset" value="Сбросить">
+				</div>
+				
+			</form>
+		</div>
+	</div>
+
+	<button class="accordion">Задание 11  js - game </button>
+	<div class="panel">
+		<div class="game">
+		<h1>Камень-ножницы-бумага</h1>
+		<div class="counter-block">
+			<div class="count count-user">0</div>
+			<span>:</span>
+			<div class="count count-comp">0</div>
+		</div>
+		<div class="figure-container">
+			<div class="user-field">
+				<button class="field rock" data-field="r"></button>
+				<button class="field scissors" data-field="s"></button>
+				<button class="field paper" data-field="p"></button>
+			</div>
+			<div class="comp-field">
+				<button class="field rock" data-field="r"></button>
+				<button class="field scissors" data-field="s"></button>
+				<button class="field paper" data-field="p"></button>
+			</div>
+		</div>
+		<h3 class="result">Сделайте выбор</h3>
+			
+		<div class="buttons">
+			<button class="play">Играть заново</button>
+		</div>
+	</div>
+
+	<audio src="#" class="sound"></audio>
+	<script src="game.js"></script>
+	</div>
+
+
+	<script>
+		var acc = document.getElementsByClassName("accordion");
+		var i;
+		
+		for (i = 0; i < acc.length; i++) {
+			acc[i].addEventListener("click", function() {
+				this.classList.toggle("active");
+				var panel = this.nextElementSibling;
+				if (panel.style.display === "block") {
+					panel.style.display = "none";
+				} else {
+					panel.style.display = "block";
+				}
+			});
+		}
+
+		let img = document.querySelector('#img');
+		
+		function changeSize(img, time){
+			img.width  *=1.5;  //time + "px";
+			img.height *=1.5;//time + "px";
+		}
+
+		img.onclick = function(){
+			let start = Date.now();
+			let timer = setInterval(function(){
+				let timePassed = Date.now() -start;
+				if(timePassed >= 150){
+					clearInterval(timer);
+					return;
+				}
+				changeSize(img,timePassed);
+			}, 50);
+		}
+		
+		</script>
+
+		<script src="accordion.js"></script>
+		<script src="calendar.js"></script>
+		<script src="DOM.js"></script>
+</div>
+</body>
+</html>
