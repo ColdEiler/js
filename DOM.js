@@ -146,7 +146,7 @@ function check_fio(){
         fio_right.setAttribute("class", "right valid");
     }else{
         fio_right.setAttribute("class", "right novalid");
-        alert("Что-то не так c полем фио!!! ");
+        //alert("Что-то не так c полем фио!!! ");
     }
 }
 
@@ -156,11 +156,49 @@ pas2.addEventListener("blur",()=>check_password());
 function check_password(){
     if(document.head_hunter.pwd.value != document.head_hunter.pwd1.value || document.head_hunter.pwd.value == ''){
         pas.setAttribute("class", "right novalid");
-        alert ("Что не так с паролем")
+        //alert ("Что не так с паролем")
     } else {
         pas.setAttribute("class", "right valid");
     }
 }
+
+
+let skills = document.querySelectorAll("input[type=checkbox]");
+let skills_block = document.querySelector(".skills .right");
+
+skills[skills.length-1].addEventListener("blur", () =>check_skills());
+function check_list(skills){
+    for (let i = 0; i < skills.length; i++) {
+        if(skills[i].checked){
+            return true;
+        }
+    }
+    return false;
+}
+function check_skills() {
+    if (check_list(skills)) {
+        skills_block.setAttribute("class", "right valid");
+    } else{
+        skills_block.setAttribute("class", "right novalid");
+    }
+}
+
+
+
+
+let edu_block = document.querySelector(".education .right")
+let edu = document.getElementById('select')
+edu.addEventListener("blur",()=> check_select());
+function check_select(){
+
+    if(edu.selectedIndex == -1)
+    {
+        edu_block.setAttribute("class", "right novalid");
+    }else{
+        edu_block.setAttribute("class", "right valid");
+    }
+}
+
 
 let mailbox = document.querySelector('.email .right');
 let email = document.querySelector(".email input");
@@ -168,14 +206,14 @@ let email = document.querySelector(".email input");
 email.addEventListener("blur",()=>check_email());
 
 function check_email(){
-    var re_mail = /^[\w-\.{2}]+@[\w-]+\.[a-z]{2,4}$/i; // Регулярка почты /^[a-zA-Z\d\.]+@[a-z\d\.]+/
+    var re_mail = /^[\w-\.]{2,}@[\w-]+\.[a-z]{2,4}$/i; // Регулярка почты /^[a-zA-Z\d\.]+@[a-z\d\.]+/
     var myMail = document.head_hunter.id_email.value; 
     var valid_mail = re_mail.test(myMail);
     if (valid_mail){
         mailbox.setAttribute('class', 'right valid');
     }else{
         mailbox.setAttribute('class', 'right novalid');
-        alert("что-то не так с почтой!!!");
+        //alert("что-то не так с почтой!!!");
     }
 }
 
@@ -191,7 +229,7 @@ function check_phone(){
         phone_right.setAttribute('class',"right valid");
     }else{
         phone_right.setAttribute('class',"right novalid");
-        alert("что-то не так с телефоном")
+        //alert("что-то не так с телефоном")
     }
 }
 
@@ -206,14 +244,21 @@ function check_about(){
         about_right.setAttribute("class","right valid");
     }else {
         about_right.setAttribute("class","right novalid");
-        alert("что-то не так с разделом о себе")
+        //alert("что-то не так с разделом о себе")
     }
 }
 
 function valid(){
  check_fio();
  check_password();
+ check_skills();
+ check_select();
  check_email();
  check_phone();
  check_about();   
+}
+
+function exit(){
+    let all = document.querySelectorAll(".right");
+    all.forEach(item=>item.classList.remove('valid','novalid'));
 }

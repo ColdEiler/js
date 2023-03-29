@@ -173,12 +173,12 @@
 				</div>
 				<div class="form education">
 					<div class="right">
-						<select name="item" size="3">
-							<option value="">Высшее профессиональное</option>
-							<option value="">Среднее профессиональное</option>
-							<option value="">Начальное профессиональное</option>
-							<option value="">Основное общее</option>
-							<option value="">Начальное общее</option>
+						<select name="item" size="3" id="select">
+							<option value="1">Высшее профессиональное</option>
+							<option value="2">Среднее профессиональное</option>
+							<option value="3">Начальное профессиональное</option>
+							<option value="4">Основное общее</option>
+							<option value="5">Начальное общее</option>
 						</select>
 					</div>
 					<div class="left">Образование</div>
@@ -201,7 +201,7 @@
 				</div>
 				<div class= "buttons">
 					<input type="button" value="готово" onclick="valid();">
-					<input type="reset" value="Сбросить">
+					<input type="reset" value="Сбросить" onclick="exit();">
 				</div>
 				
 			</form>
