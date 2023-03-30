@@ -206,7 +206,7 @@ let email = document.querySelector(".email input");
 email.addEventListener("blur",()=>check_email());
 
 function check_email(){
-    var re_mail = /^[\w-\.]{2,}@[\w-]+\.[a-z]{2,4}$/i; // Регулярка почты /^[a-zA-Z\d\.]+@[a-z\d\.]+/
+    var re_mail = /^[\w-\.]{2,}@[\w-]{2,}\.[a-z]{2,4}$/i; // Регулярка почты /^[a-zA-Z\d\.]+@[a-z\d\.]+/
     var myMail = document.head_hunter.id_email.value; 
     var valid_mail = re_mail.test(myMail);
     if (valid_mail){
