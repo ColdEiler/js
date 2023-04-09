@@ -1,0 +1,32 @@
+
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 36px;
+    text-align: center;
+}
+
+.wrapper{
+    width: 900px;
+    margin: 0 auto;
+}
+.slider-buttons{
+    text-align: center;
+}
+
+.slider-container{
+    overflow: hidden;
+    background-color: pink;
+}
+
+.slider-track{
+    display: flex;
+    background-color: yellow;
+    transition: .3s;
+    
+}
+
+.slider-item{
+    height:400px;
+    
+}
+
